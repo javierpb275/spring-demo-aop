@@ -13,7 +13,7 @@ public class MyDemoLoggingAspect {
 	// let's start with an @Before advice
 	
 	//Run this code BEFORE - target object method: "public void addAccount()". 
-	@Before("execution(public void com.javi.aopdemo.dao.AccountDAO.addAccount())")//This will only match on addAccount for specific class. (public void addAccount()): Pointcut expression. Match addAccount() method in any class
+	@Before("execution(public void add*())")//match method starting with "add" in any class. (public void addAccount()): Pointcut expression. Match addAccount() method in any class
 	public void beforeAddAccountAdvice() {
 		
 		// Add our custom code (that will be run BEFORE that given method)
