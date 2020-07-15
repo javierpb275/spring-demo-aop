@@ -14,8 +14,8 @@ public class MyDemoLoggingAspect {
 	
 	//Run this code BEFORE - target object method: "public void addAccount()". 
 	//@Before("execution(public void add*())")//match method starting with "add" in any class. (public void addAccount()): Pointcut expression. Match addAccount() method in any class
-	@Before("execution(* add*(com.javi.aopdemo.Account))")//* add*(): match with any return type.void add*():match method with "void" return type. Will only match on "void" return type for add* methods
-	public void beforeAddAccountAdvice() {//you must add the fully qualified class name: (com.javi.aopdemo.Account)
+	@Before("execution(* add*(com.javi.aopdemo.Account, ..))")//* add*(): match with any return type.void add*():match method with "void" return type. Will only match on "void" return type for add* methods
+	public void beforeAddAccountAdvice() {//you must add the fully qualified class name: (com.javi.aopdemo.Account)// .. : Match on any number of arguments
 		
 		// Add our custom code (that will be run BEFORE that given method)
 		
