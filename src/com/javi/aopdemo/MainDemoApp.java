@@ -22,10 +22,11 @@ public class MainDemoApp {
 		
 		
 		// call the business method
-		theAccountDAO.addAccount();
+		Account myAccount = new Account();
+		theAccountDAO.addAccount(myAccount);//will only match on addAccount for this param type
 		
 		// call the membership business method
-		theMembershipDAO.addSillyMember();
+		theMembershipDAO.addSillyMember();//will not match
 		
 		
 		// close the context
